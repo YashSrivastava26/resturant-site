@@ -1,13 +1,70 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+@layer base {
+  .app-wrapper {
+    @apply flex min-h-screen items-center justify-between;
+  }
+
+  .app-wrapper-text {
+    @apply flex justify-center items-start flex-col flex-1;
+  }
+
+  .app-wrapper-img {
+    @apply flex items-center justify-center w-full flex-1 mr-6;
+  }
+  .app-wrapper-img img {
+    @apply w-[80%];
+  }
+  .app-padding {
+    @apply px-8 py-4 md:py-8 md:px-16 lg:p-16 xl:px-16 xl:py-24;
+  }
+  .button {
+    @apply bg-crimson text-dark font-bold text-base tracking-wide rounded border-none outline-none cursor-pointer py-2 px-4;
+  }
+
+  .p-cormorant {
+    @apply font-base text-white font-bold tracking-wider capitalize text-lg md:text-xl 2xl:text-2xl;
+  }
+  .p-opensans {
+    @apply font-alt text-white font-normal tracking-wider capitalize text-xs md:text-sm 2xl:text-base;
+  }
+  .heading-cormorant {
+    @apply font-base text-golden tracking-wider capitalize text-3xl md:text-4xl 2xl:text-5xl font-semibold;
+  }
+}
+.app-bg {
+  background: url("./assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
