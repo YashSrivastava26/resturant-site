@@ -1,4 +1,4 @@
-type MenuItem = {
+export type MenuItemType = {
   name: string;
   description: string;
   price: number;
@@ -15,12 +15,12 @@ type MenuItem = {
 
 export type MenuCategory = {
   name: string;
-  items: MenuItem[];
+  items: MenuItemType[];
 };
 
 type SeasonalMenu = {
   name: string;
-  items: MenuItem[];
+  items: MenuItemType[];
 };
 
 export type FullMenu = {

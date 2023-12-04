@@ -3,6 +3,7 @@ import SubHeading from "./SubHeading";
 import Menu from "../assets/menu.png";
 import MenuItem from "./MenuItem";
 import { MenuCategory } from "../utils/typings";
+import { Link } from "react-router-dom";
 interface TodaysMenuProps {
   categories: MenuCategory[];
 }
@@ -53,9 +54,9 @@ const TodaysMenu: FC<TodaysMenuProps> = ({ categories }) => {
         </div>
       </div>
       <div className="mt-4">
-        <button type="button" className="button">
-          View More
-        </button>
+        <Link to="/menu" className="button">
+          Explore Full Menu
+        </Link>
       </div>
     </div>
   );
