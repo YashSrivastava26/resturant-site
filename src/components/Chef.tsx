@@ -2,14 +2,12 @@ import { FC } from "react";
 import ChefImg from "../assets/chef.png";
 import SubHeading from "./SubHeading";
 import quote from "../assets/quote.png";
-interface ChefProps {}
+import { ChefType } from "../utils/typings";
+interface ChefProps {
+  chefData: ChefType;
+}
 
-const Chef: FC<ChefProps> = ({}) => {
-  const chefData = {
-    name: "Chef Isabella Culinary Maestro",
-    bio: "An internationally renowned chef with a flair for creating culinary masterpieces that transcend borders.",
-    signature_dish: "Mango Tango Fusion",
-  };
+const Chef: FC<ChefProps> = ({ chefData }) => {
   return (
     <div className="app-bg app-wrapper app-padding flex flex-col lg:flex-row items-center justify-center">
       <div className="app-wrapper-img items-center justify-center md:justify-start mr-4">

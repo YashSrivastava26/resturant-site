@@ -4,6 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 @layer base {
+  :root {
+    @apply scroll-smooth scrollbar-w-2 scrollbar-thumb-primary scrollbar-thumb-rounded scrollbar-track-secondary;
+  }
   .app-wrapper {
     @apply flex min-h-screen items-center justify-between;
   }
@@ -32,7 +35,7 @@
     @apply font-alt text-white font-normal tracking-wider capitalize text-xs md:text-sm 2xl:text-base;
   }
   .heading-cormorant {
-    @apply font-base text-golden tracking-wider capitalize text-3xl md:text-4xl 2xl:text-5xl font-semibold;
+    @apply font-base text-golden tracking-wider capitalize text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-semibold;
   }
 }
 .app-bg {
@@ -67,4 +70,23 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+
+.scrollbar-w-2::-webkit-scrollbar {
+  width: 0.35rem;
+  height: 0.25rem;
+}
+
+.scrollbar-track-secondary::-webkit-scrollbar-track {
+  --bg-opacity: 0.5;
+  background-color: #aaaaaa;
+}
+
+.scrollbar-thumb-primary::-webkit-scrollbar-thumb {
+  --bg-opacity: 0.5;
+  background-color: #292929;
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 7px;
 }

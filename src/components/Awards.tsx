@@ -1,41 +1,32 @@
 import { FC } from "react";
 import SubHeading from "./SubHeading";
 import AwardCard from "./AwardCard";
+import HonorsImg from "../assets/laurels.png";
+import { awardsType } from "../utils/typings";
+interface AwardsProps {
+  awardsData: awardsType[];
+}
 
-interface AwardsProps {}
-
-const Awards: FC<AwardsProps> = ({}) => {
-  const awardsData = [
-    {
-      year: 2023,
-      organization: "Michelin Guide",
-      award: "Three Michelin Stars",
-    },
-    {
-      year: 2022,
-      organization: "James Beard Foundation",
-      award: "Outstanding Chef of the Year",
-    },
-    {
-      year: 2021,
-      organization: "World's 50 Best Restaurants",
-      award: "Top 5 Restaurants Worldwide",
-    },
-  ];
+const Awards: FC<AwardsProps> = ({ awardsData }) => {
   return (
-    <div className="bg-dark app-wrapper app-padding" id="awards">
-      <div className="app-wrapper-text">
+    <div
+      className="bg-dark app-wrapper app-padding flex flex-col lg:flex-row"
+      id="awards"
+    >
+      <div className="app-wrapper-text items-center lg:items-start">
         <SubHeading title="Awards & Recognition" />
         <h1 className="heading-cormorant">Honor&apos;s</h1>
 
-        <div className="">
+        <div className="flex justify-start items-center mt-8 flex-wrap overflow-x-hidden">
           {awardsData.map((award, index) => (
             <AwardCard key={index} award={award} />
           ))}
         </div>
       </div>
 
-      <div className="app-wrapper-img"></div>
+      <div className="app-wrapper-img  mt-12">
+        <img src={HonorsImg} alt="Awards" />
+      </div>
     </div>
   );
 };
